@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Slico.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+    <StackLayout x:Name="MasterLayout">
+
+        <StackLayout x:Name="LogoStack" VerticalOptions="Start">
+
+            <Image x:Name="LogoIcon" Source="logo.png" Margin="0,80,0,0"></Image>
+        </StackLayout>
+
+        <Grid Margin="0,90,0,90" VerticalOptions="Center">
+            <Label x:Name="lblslider1" Text="Marketer" Grid.Row="0" Grid.Column="1" FontSize="Subtitle" VerticalOptions="Center"></Label>
+            <Switch x:Name="identifier" IsToggled="false"  Grid.Row="0" Grid.Column="1" Toggled="Switch_Toggled"   />
+            <Label x:Name="lblslider2" Text="Customer" Grid.Row="0" Grid.Column="2" FontSize="Subtitle"></Label>
+           
+            
+        </Grid>
+
+        <StackLayout x:Name="LoginEntriesStack" VerticalOptions="StartAndExpand">
+        <StackLayout.Padding>
+            <OnIdiom x:TypeArguments="Thickness">
+                <OnIdiom.Phone>40,0,40,0</OnIdiom.Phone>
+                <OnIdiom.Tablet>140,150,140,0</OnIdiom.Tablet>
+            </OnIdiom>
+            </StackLayout.Padding>
+
+            <ActivityIndicator x:Name="Activityspinner" Color="Red" IsRunning="True"></ActivityIndicator>
+            <Label x:Name="lblMarketerCode" Text="Marketer Code"></Label>
+            <Entry Placeholder="Marketer Code" IsPassword="True" x:Name="markerterCode"></Entry>
+       
+            <Button VerticalOptions="Center" Text="Login" Clicked="login_Clicked"/>
+        </StackLayout>
+   
+   
+    </StackLayout>
+</ContentPage>
+
+    

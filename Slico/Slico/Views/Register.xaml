@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slico.Views.Register"
+              Title="New Customer">
+
+    
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image Source="cust.png" VerticalOptions="Center" HeightRequest="64" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Entry x:Name="firstname" Placeholder="First Name"/>
+                <Entry x:Name="othername" Placeholder ="Other Names"/>
+                <Entry x:Name="lastname" Placeholder="Last Name"/>
+                <Picker x:Name="gender" Title="Gender">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Male</x:String>
+                            <x:String>Female</x:String>
+                           
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Label Text="Date of Birth:" />
+                <DatePicker   />
+
+                <Entry Placeholder="Home Address"/>
+                <Entry Placeholder="Business Address"/>
+                <Picker Title="Region">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Western Region</x:String>
+                            <x:String>Northern Region</x:String>
+                            <x:String>Eastern Region</x:String>
+                            <x:String>Southern Region</x:String>
+
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Picker Title="District">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Western Urban</x:String>
+                            <x:String>Western Rural</x:String>
+
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Entry Placeholder="Mobile Number"/>
+
+
+            
+                <Button Margin="0,10,0,0" Text="Next"
+                        Clicked="Button_Clicked"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
