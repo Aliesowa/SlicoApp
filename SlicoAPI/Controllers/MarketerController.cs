@@ -50,7 +50,7 @@ namespace SlicoAPI.Controllers
             return new JsonResult(table);
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public JsonResult Get(int id)
         {
 

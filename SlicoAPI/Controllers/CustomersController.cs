@@ -55,7 +55,7 @@ namespace SlicoAPI.Controllers
             return new JsonResult(table);
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public JsonResult Get(int id)
         {
 
@@ -203,26 +203,44 @@ namespace SlicoAPI.Controllers
 
         [Route("SaveFile")]
         [HttpPost]
-        public JsonResult SaveFile()
+        public JsonResult SaveFile([FromForm] FileUpload fileUpload)
         {
             try
             {
-                var httpRequest = Request.Form;
-                var postedFile = httpRequest.Files[0];
-                string filename = postedFile.FileName;
-                var physicalPath = _env.ContentRootPath + "/Photos/" + filename;
 
-                using (var stream = new FileStream(physicalPath, FileMode.Create))
+                if(fileUpload.files.Length > 0)
                 {
-                    postedFile.CopyTo(stream);
-                }
+                    string path = _env.WebRootPath + "\\ Photos \\";
 
-                return new JsonResult(filename);
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+
+                    }
+
+                    using (FileStream fileStream = System.IO.File.Create(path + fileUpload.files.FileName))
+                    {
+                        fileUpload.files.CopyTo(fileStream);
+                        fileStream.Flush();
+
+                    }
+                }
+                //var httpRequest = Request.Form;
+                //var postedFile = httpRequest.Files[0];
+                //string filename = postedFile.FileName;
+                //var physicalPath = _env.ContentRootPath + "/Photos/" + filename;
+
+                //using (var stream = new FileStream(physicalPath, FileMode.Create))
+                //{
+                //    postedFile.CopyTo(stream);
+                //}
+
+                return new JsonResult(fileUpload.files.FileName.ToString());
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                return new JsonResult("anonymous.png");
+                return new JsonResult(e.Message.ToString());
             }
         }
     }
