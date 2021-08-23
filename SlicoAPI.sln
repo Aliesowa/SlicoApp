@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlicoAPI", "SlicoAPI\SlicoAPI.csproj", "{0A45D05C-2B0A-484D-8BD7-ACC2E8518579}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A45D05C-2B0A-484D-8BD7-ACC2E8518579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A45D05C-2B0A-484D-8BD7-ACC2E8518579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A45D05C-2B0A-484D-8BD7-ACC2E8518579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A45D05C-2B0A-484D-8BD7-ACC2E8518579}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AC2A96C-0D1E-4418-BB10-6F99C694F164}
+	EndGlobalSection
+EndGlobal
